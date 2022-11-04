@@ -4,15 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "ComponentStoragable.generated.h"
+#include "ComponentInventory.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class UComponentStoragable : public UObject
+class UComponentInventory : public UObject
 {
 	GENERATED_BODY()
-
 	
 };
