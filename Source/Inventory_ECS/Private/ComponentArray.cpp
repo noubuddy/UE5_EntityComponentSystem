@@ -1,7 +1,7 @@
 ﻿#include "ComponentArray.h"
 
 template <typename T>
-void TComponentArray<T>::InsertData(Entity entity, T component)
+void ComponentArray<T>::InsertData(Entity entity, T component)
 {
 	check(EntityToIndexMap.find(entity) != EntityToIndexMap.end());
 
@@ -13,7 +13,7 @@ void TComponentArray<T>::InsertData(Entity entity, T component)
 }
 
 template <typename T>
-void TComponentArray<T>::RemoveData(Entity entity)
+void ComponentArray<T>::RemoveData(Entity entity)
 {
 	check(EntityToIndexMap.find(entity) != EntityToIndexMap.end());
 
@@ -32,7 +32,7 @@ void TComponentArray<T>::RemoveData(Entity entity)
 }
 
 template <typename T>
-T &TComponentArray<T>::GetData(Entity entity)
+T &ComponentArray<T>::GetData(Entity entity)
 {
 	check(EntityToIndexMap.find(entity) != EntityToIndexMap.end());
 
@@ -40,7 +40,7 @@ T &TComponentArray<T>::GetData(Entity entity)
 }
 
 template <typename T>
-void TComponentArray<T>::EntityDestroyed(Entity entity)
+void ComponentArray<T>::EntityDestroyed(Entity entity)
 {
 	check(EntityToIndexMap.find(entity) != EntityToIndexMap.end());
 

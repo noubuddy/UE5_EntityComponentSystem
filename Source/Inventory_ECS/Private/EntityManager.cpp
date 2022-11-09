@@ -4,7 +4,6 @@ EntityManager::EntityManager()
 {
 	for (Entity entity = 0; entity < MAX_ENTITIES; ++entity)
 	{
-		// adds an element to the head of the queue
 		AvailableEntities.push(entity);
 	}
 }

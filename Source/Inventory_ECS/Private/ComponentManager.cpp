@@ -9,7 +9,7 @@ void ComponentManager::RegisterComponent()
 
 	ComponentTypes.insert({TypeName, NextComponentType});
 
-	ComponentArrays.insert({TypeName, std::make_shared<TComponentArray<T>>()});
+	ComponentArrays.insert({TypeName, std::make_shared<ComponentArray<T>>()});
 
 	++NextComponentType;
 }
@@ -52,11 +52,11 @@ void ComponentManager::EntityDestroyed(Entity entity)
 }
 
 template <typename T>
-std::shared_ptr<TComponentArray<T>> ComponentManager::GetComponentArray()
+std::shared_ptr<ComponentArray<T>> ComponentManager::GetComponentArray()
 {
 	const char *TypeName = typeid(T).name();
 
 	check(ComponentTypes.find(TypeName) != ComponentTypes.end());
 
-	return std::static_pointer_cast<TComponentArray<T>>(ComponentArrays[TypeName]);
+	return std::static_pointer_cast<ComponentArray<T>>(ComponentArrays[TypeName]);
 }

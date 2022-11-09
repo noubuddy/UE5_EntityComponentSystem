@@ -31,5 +31,5 @@ private:
 	ComponentType NextComponentType;
 
 	template <typename T>
-	std::shared_ptr<TComponentArray<T>> GetComponentArray();
+	std::shared_ptr<ComponentArray<T>> GetComponentArray();
 };
