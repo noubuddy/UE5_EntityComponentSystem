@@ -2,12 +2,12 @@
 
 #include <queue>
 #include <array>
-#include "Inventory_ECS/EcsMinimal.h"
+#include "Inventory_ECS/EcsMinimal_Old.h"
 
-class EntityManager
+class EntityManager_Old
 {
 public:
-	EntityManager();
+	EntityManager_Old();
 
 	Entity CreateEntity();
 

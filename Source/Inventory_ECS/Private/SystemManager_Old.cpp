@@ -1,7 +1,7 @@
-﻿#include "SystemManager.h"
+﻿#include "SystemManager_Old.h"
 
 template <typename T>
-std::shared_ptr<T> SystemManager::RegisterSystem()
+std::shared_ptr<T> SystemManager_Old::RegisterSystem()
 {
 	const char *TypeName = typeid(T).name();
 
@@ -13,7 +13,7 @@ std::shared_ptr<T> SystemManager::RegisterSystem()
 }
 
 template <typename T>
-void SystemManager::SetSignature(Signature signature)
+void SystemManager_Old::SetSignature(Signature signature)
 {
 	const char *TypeName = typeid(T).name();
 
@@ -22,7 +22,7 @@ void SystemManager::SetSignature(Signature signature)
 	Signatures.insert({TypeName, signature});
 }
 
-void SystemManager::EntityDestroyed(Entity entity)
+void SystemManager_Old::EntityDestroyed(Entity entity)
 {
 	for (auto const &pair : Systems)
 	{
@@ -32,7 +32,7 @@ void SystemManager::EntityDestroyed(Entity entity)
 	}
 }
 
-void SystemManager::EntitySignatureChanged(Entity entity, Signature entitySignature)
+void SystemManager_Old::EntitySignatureChanged(Entity entity, Signature entitySignature)
 {
 	for (auto const &pair : Systems)
 	{

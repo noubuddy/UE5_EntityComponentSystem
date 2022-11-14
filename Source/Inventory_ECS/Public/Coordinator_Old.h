@@ -1,10 +1,10 @@
 ﻿#pragma once
-#include "ComponentManager.h"
-#include "EntityManager.h"
-#include "SystemManager.h"
-#include "Inventory_ECS/EcsMinimal.h"
+#include "ComponentManager_Old.h"
+#include "EntityManager_Old.h"
+#include "SystemManager_Old.h"
+#include "Inventory_ECS/EcsMinimal_Old.h"
 
-class Coordinator
+class Coordinator_Old
 {
 public:
 	void Init();
@@ -35,7 +35,7 @@ public:
 	void SetSystemSignature(Signature Signature);
 
 private:
-	std::unique_ptr<ComponentManager> ComponentManager;
-	std::unique_ptr<EntityManager> EntityManager;
-	std::unique_ptr<SystemManager> SystemManager;
+	std::unique_ptr<ComponentManager_Old> ComponentManager;
+	std::unique_ptr<EntityManager_Old> EntityManager;
+	std::unique_ptr<SystemManager_Old> SystemManager;
 };

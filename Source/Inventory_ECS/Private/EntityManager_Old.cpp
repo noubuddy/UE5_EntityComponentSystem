@@ -1,6 +1,6 @@
-﻿#include "EntityManager.h"
+﻿#include "EntityManager_Old.h"
 
-EntityManager::EntityManager()
+EntityManager_Old::EntityManager_Old()
 {
 	for (Entity entity = 0; entity < MAX_ENTITIES; ++entity)
 	{
@@ -8,7 +8,7 @@ EntityManager::EntityManager()
 	}
 }
 
-Entity EntityManager::CreateEntity()
+Entity EntityManager_Old::CreateEntity()
 {
 	check(LivingEntityCount < MAX_ENTITIES);
 	
@@ -19,7 +19,7 @@ Entity EntityManager::CreateEntity()
 	return id;
 }
 
-void EntityManager::DestroyEntity(Entity entity)
+void EntityManager_Old::DestroyEntity(Entity entity)
 {
 	check(entity < MAX_ENTITIES);
 	
@@ -29,14 +29,14 @@ void EntityManager::DestroyEntity(Entity entity)
 	--LivingEntityCount;
 }
 
-void EntityManager::SetSignature(Entity entity, Signature signature)
+void EntityManager_Old::SetSignature(Entity entity, Signature signature)
 {
 	check(entity < MAX_ENTITIES);
 
 	Signatures[entity] = signature;
 }
 
-Signature EntityManager::GetSignature(Entity entity)
+Signature EntityManager_Old::GetSignature(Entity entity)
 {
 	check(entity < MAX_ENTITIES);
 

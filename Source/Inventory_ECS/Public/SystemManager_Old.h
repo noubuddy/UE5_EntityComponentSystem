@@ -1,8 +1,8 @@
 ﻿#pragma once
-#include "System.h"
-#include "Inventory_ECS/EcsMinimal.h"
+#include "System_Old.h"
+#include "Inventory_ECS/EcsMinimal_Old.h"
 
-class SystemManager
+class SystemManager_Old
 {
 public:
 
@@ -20,5 +20,5 @@ private:
 	
 	std::unordered_map<const char *, Signature> Signatures;
 
-	std::unordered_map<const char *, std::shared_ptr<System>> Systems;
+	std::unordered_map<const char *, std::shared_ptr<System_Old>> Systems;
 };

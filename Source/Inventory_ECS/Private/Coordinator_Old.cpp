@@ -1,18 +1,18 @@
-﻿#include "Coordinator.h"
+﻿#include "Coordinator_Old.h"
 
-void Coordinator::Init()
+void Coordinator_Old::Init()
 {
-	ComponentManager = std::make_unique<class ComponentManager>();
-	EntityManager = std::make_unique<class EntityManager>();
-	SystemManager = std::make_unique<class SystemManager>();
+	ComponentManager = std::make_unique<class ComponentManager_Old>();
+	EntityManager = std::make_unique<class EntityManager_Old>();
+	SystemManager = std::make_unique<class SystemManager_Old>();
 }
 
-Entity Coordinator::CreateEntity()
+Entity Coordinator_Old::CreateEntity()
 {
 	return EntityManager->CreateEntity();
 }
 
-void Coordinator::DestroyEntity(Entity entity)
+void Coordinator_Old::DestroyEntity(Entity entity)
 {
 	EntityManager->DestroyEntity(entity);
 
@@ -22,13 +22,13 @@ void Coordinator::DestroyEntity(Entity entity)
 }
 
 template <typename T>
-void Coordinator::RegisterComponent()
+void Coordinator_Old::RegisterComponent()
 {
 	ComponentManager->RegisterComponent<T>();
 }
 
 template <typename T>
-void Coordinator::AddComponent(Entity entity, T component)
+void Coordinator_Old::AddComponent(Entity entity, T component)
 {
 	ComponentManager->AddComponent<T>(entity, component);
 
@@ -40,7 +40,7 @@ void Coordinator::AddComponent(Entity entity, T component)
 }
 
 template <typename T>
-void Coordinator::RemoveComponent(Entity entity)
+void Coordinator_Old::RemoveComponent(Entity entity)
 {
 	ComponentManager->RemoveComponent<T>(entity);
 
@@ -52,25 +52,25 @@ void Coordinator::RemoveComponent(Entity entity)
 }
 
 template <typename T>
-T &Coordinator::GetComponent(Entity entity)
+T &Coordinator_Old::GetComponent(Entity entity)
 {
 	return ComponentManager->GetComponentType<T>(entity);
 }
 
 template <typename T>
-ComponentType Coordinator::GetComponentType()
+ComponentType Coordinator_Old::GetComponentType()
 {
 	return ComponentManager->GetComponentType<T>();
 }
 
 template <typename T>
-std::shared_ptr<T> Coordinator::RegisterSystem()
+std::shared_ptr<T> Coordinator_Old::RegisterSystem()
 {
 	return SystemManager->SetSignature<T>();
 }
 
 template <typename T>
-void Coordinator::SetSystemSignature(Signature Signature)
+void Coordinator_Old::SetSystemSignature(Signature Signature)
 {
 	SystemManager->SetSignature<T>(Signature);
 }

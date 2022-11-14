@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 #include <array>
-#include "Inventory_ECS/EcsMinimal.h"
+#include "Inventory_ECS/EcsMinimal_Old.h"
 
 class IComponentArray
 {
@@ -11,7 +11,7 @@ public:
 };
 
 template <typename T>
-class ComponentArray : public IComponentArray
+class ComponentArray_Old : public IComponentArray
 {
 public:
 	void InsertData(Entity entity, T component);

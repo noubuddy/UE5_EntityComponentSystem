@@ -1,8 +1,8 @@
 ﻿#pragma once
-#include "ComponentArray.h"
-#include "Inventory_ECS/EcsMinimal.h"
+#include "ComponentArray_Old.h"
+#include "Inventory_ECS/EcsMinimal_Old.h"
 
-class ComponentManager
+class ComponentManager_Old
 {
 public:
 	
@@ -31,5 +31,5 @@ private:
 	ComponentType NextComponentType;
 
 	template <typename T>
-	std::shared_ptr<ComponentArray<T>> GetComponentArray();
+	std::shared_ptr<ComponentArray_Old<T>> GetComponentArray();
 };

@@ -1,8 +1,8 @@
 ﻿#pragma once
-#include "Inventory_ECS/EcsMinimal.h"
+#include "Inventory_ECS/EcsMinimal_Old.h"
 #include <set>
 
-class System
+class System_Old
 {
 public:
 	std::set<Entity> Entities;
